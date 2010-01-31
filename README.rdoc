@@ -1,13 +1,32 @@
 = rack-forceie7
 
-Description goes here.
+Rack::ForceIE7 adds the X-UA-Compatible header with the value of IE=7 to the response headers so that there is no need to include anything in the head of your HTML document. Unlike some other middleware this doesn't edit your body - it just adds the additional header to the response.
+
+Rack::ForceIE7 is lightweight and tested.
+
+== Install
+
+  sudo gem install rack-forceie7 -s http://gemcutter.org
+
+== Usage
+
+  require 'rack-forceie7'
+
+  use Rack::ForceIE7
+
+== Rails Usage
+
+In your environments.rb
+
+  config.gem 'rack-forceie7'
+  config.middleware.use "Rack::ForceIE7"
+
 
 == Note on Patches/Pull Requests
  
 * Fork the project.
 * Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
+* Add tests for it. This is important so I don't break it in a future version unintentionally.
 * Commit, do not mess with rakefile, version, or history.
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
